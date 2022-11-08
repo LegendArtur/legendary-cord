@@ -6,13 +6,16 @@ import RedeemIcon from '@mui/icons-material/Redeem';
 import GifBoxIcon from '@mui/icons-material/GifBox';
 import FilterFramesIcon from '@mui/icons-material/FilterFrames';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import Message from "./Message";
 
 function Chat() {
   return (
     <div className="chat">
       <ChatHeader />
 
-      <div className="chat__messages"></div>
+      <div className="chat__messages">
+        <Message />
+      </div>
 
 
       
