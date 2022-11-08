@@ -7,10 +7,8 @@ function App() {
   return (
     // BEM naming convention
     <div className="app">
-      {/* Sidebar */}
       <Sidebar />
 
-      {/* Chat */}
       <Chat />
     </div>
   );
