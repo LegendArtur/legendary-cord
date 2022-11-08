@@ -1,8 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-const initialState = {
-  value: 0,
-};
+import { createSlice } from "@reduxjs/toolkit";
 
 export const appSlice = createSlice({
   name: "app",
@@ -12,7 +8,7 @@ export const appSlice = createSlice({
   },
   reducers: {
     setChannelId: (state, action) => {
-      state.app += action.payload;
+      state.app = action.payload;
     }
   },
 });

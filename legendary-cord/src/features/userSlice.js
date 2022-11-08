@@ -1,8 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  value: 0,
-};
+import { createSlice } from '@reduxjs/toolkit';
 
 export const userSlice = createSlice({
   name: 'user',
@@ -12,7 +8,7 @@ export const userSlice = createSlice({
 
   reducers: {
     login: (state, action) => {
-      state.user += action.payload;
+      state.user = action.payload;
     },
     logout: (state) => {
       state.user = null;
