@@ -3,7 +3,6 @@
     flex-direction: column;
     flex: 0.25;
     height: 100vh;
-
     background-color: #2f3135;
 }
 
@@ -79,4 +78,10 @@
 
 .sidebar__profileInfo > h3 {
     color: white;
+}
+
+@media (max-width:700px){
+    .sidebar {
+        display: none;
+    }
 }

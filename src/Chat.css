@@ -1,7 +1,7 @@
 .chat {
     display: flex;
     flex-direction: column;
-    flex: 0.75;
+    flex: 1;
     background-color: #363a3f;
     height: 100vh;
 }
@@ -20,11 +20,10 @@
     color: lightgrey;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 15px;
     border-radius: 5px;
     margin: 20px;
-    border-top: 1px solid gray;
     background-color: #474b53;
 }
 
@@ -46,5 +45,18 @@
 }
 
 .chat__inputIcons > .MuiSvgIcon-root {
+    flex-direction: row;
+    align-items: center;
     padding: 5px;
+    cursor: pointer;
+}
+
+.chat__inputIcons > .MuiSvgIcon-root:hover {
+    color: white;
+}
+
+@media (min-width:700px){
+    .chat {
+        flex: 0.75;
+    }
 }

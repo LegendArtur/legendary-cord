@@ -37,7 +37,7 @@ function Chat() {
 
   useEffect(() => {
     // 👇️ scroll to bottom every time messages change
-    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   const sendMessage = (e) => {
@@ -68,7 +68,9 @@ function Chat() {
       </div>
 
       <div className="chat__input">
-        <AddCircleRoundedIcon fontSize="large" />
+        <div className="chat__inputIcons">
+          <AddCircleRoundedIcon fontSize="large" />
+        </div>
         <form>
           <input
             value={input}
