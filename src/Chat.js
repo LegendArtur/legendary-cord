@@ -76,7 +76,7 @@ function Chat() {
             value={input}
             disabled={!channelId}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={"Message #testchannel"}
+            placeholder={(channelId) ? "Message #" + channelName : "Select a channel"}
           />
           <button
             disabled={!channelId}
