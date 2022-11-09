@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Chat.css";
 import ChatHeader from "./ChatHeader";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
@@ -15,6 +15,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 
 function Chat() {
+  const bottomRef = useRef(null);
+
   const user = useSelector(selectUser);
   const channelId = useSelector(selectChannelId);
   const channelName = useSelector(selectChannelName);
@@ -26,12 +28,17 @@ function Chat() {
       db.collection("channels")
         .doc(channelId)
         .collection("messages")
-        .orderBy("timestamp", "desc")
+        .orderBy("timestamp", "asc")
         .onSnapshot((snapshot) =>
           setMessages(snapshot.docs.map((doc) => doc.data()))
         );
     }
   }, [channelId]);
+
+  useEffect(() => {
+    // 👇️ scroll to bottom every time messages change
+    bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+  }, [messages]);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -57,6 +64,7 @@ function Chat() {
             message={message.message}
           />
         ))}
+        <div ref={bottomRef} />
       </div>
 
       <div className="chat__input">
